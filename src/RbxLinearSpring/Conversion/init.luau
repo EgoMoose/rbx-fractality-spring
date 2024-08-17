@@ -1,5 +1,7 @@
 --!strict
 
+local Color3Luv = require(script.Color3Luv)
+
 export type Converter<T> = {
 	serialize: (T) -> { number },
 	deserialize: ({ number }) -> T,
@@ -75,12 +77,8 @@ Conversion.Vector3 = {
 } :: Converter<Vector3>
 
 Conversion.Color3 = {
-	serialize = function(value)
-		return { value.R, value.G, value.B }
-	end,
-	deserialize = function(value)
-		return Color3.new(value[1], value[2], value[3])
-	end,
+	serialize = Color3Luv.rgbToLuv,
+	deserialize = Color3Luv.luvToRgb,
 } :: Converter<Color3>
 
 --
