@@ -8,4 +8,3 @@ authors = ["Fractality", "EgoMoose"]
 license = "MIT"
 exclude = ["**"]
 include = ["src", "src/**", "wally.toml", "wally.lock", "default.project.json", "LICENSE"]
-private = true
