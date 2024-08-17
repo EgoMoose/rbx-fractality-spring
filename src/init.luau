@@ -26,6 +26,18 @@ export type FractalitySpring<T> = typeof(setmetatable(
 
 -- Constructors
 
+--[=[
+	@within FractalitySpring
+	@function new
+
+	Creates a new spring.
+
+	@param dampingRation number
+	@param frequency number
+	@param position T
+	@param goal T
+	@return FractalitySpring<T>
+]=]
 function FractalitySpringClass.new<T>(
 	dampingRatio: number,
 	frequency: number,
@@ -147,7 +159,7 @@ end
 
 --[=[
 	@within FractalitySpring
-	@method setFrequency
+	@method setVelocity
 
 	Sets the spring's velocity. The length of this array depends on the value type of the spring.
 
