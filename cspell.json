@@ -3,7 +3,16 @@
     "ignorePaths": [],
     "dictionaryDefinitions": [],
     "dictionaries": [],
-    "words": [],
+    "words": [
+        "cframes",
+        "cieluv",
+        "Fraktality",
+        "Maclaurin",
+        "Orthonormalize",
+        "overdamped",
+        "setmetatable",
+        "underdamped"
+    ],
     "ignoreWords": [],
     "import": []
 }
