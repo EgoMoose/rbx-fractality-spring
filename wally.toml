@@ -1,0 +1,11 @@
+[package]
+name = "egomoose/rbx-frak-spring"
+description = "https://github.com/EgoMoose/rbx-frak-spring"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+authors = ["EgoMoose", "Fraktality"]
+license = "MIT"
+exclude = ["**"]
+include = ["src", "src/**", "wally.toml", "wally.lock", "default.project.json", "LICENSE"]
+private = true

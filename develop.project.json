@@ -1,0 +1,12 @@
+{
+	"name": "rbx-frak-spring",
+	"tree": {
+		"$className": "DataModel",
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"FrakSpring": {
+				"$path": "src"
+			}
+		}
+	}
+}
