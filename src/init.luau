@@ -3,28 +3,36 @@
 local RbxLinearSpring = require(script.RbxLinearSpring)
 local CFrameSpring = require(script.CFrameSpring)
 
-local FraktalitySpringClass = {}
-FraktalitySpringClass.__index = FraktalitySpringClass
-FraktalitySpringClass.ClassName = "FraktalitySpring"
+--[=[
+	@class FractalitySpring
+
+	A high-performance fully typed spring class based on Fractality's spr library for use in Roblox.
+	
+	Visualizer: https://www.desmos.com/calculator/rzvw27ljh9
+]=]
+
+local FractalitySpringClass = {}
+FractalitySpringClass.__index = FractalitySpringClass
+FractalitySpringClass.ClassName = "FractalitySpring"
 
 export type Supported = RbxLinearSpring.Supported | CFrame
 
-export type FraktalitySpring<T> = typeof(setmetatable(
+export type FractalitySpring<T> = typeof(setmetatable(
 	{} :: {
 		internal: RbxLinearSpring.RbxLinearSpring<T>,
 	},
-	FraktalitySpringClass
+	FractalitySpringClass
 ))
 
 -- Constructors
 
-function FraktalitySpringClass.new<T>(
+function FractalitySpringClass.new<T>(
 	dampingRatio: number,
 	frequency: number,
 	position: T & Supported,
 	goal: T & Supported
 )
-	local self = setmetatable({}, FraktalitySpringClass) :: FraktalitySpring<T>
+	local self = setmetatable({}, FractalitySpringClass) :: FractalitySpring<T>
 
 	if typeof(position) == "CFrame" then
 		self.internal = (
@@ -41,54 +49,151 @@ end
 
 -- Public Methods
 
-function FraktalitySpringClass.getDampingRatio<T>(self: FraktalitySpring<T>)
+--[=[
+	@within FractalitySpring
+	@method getDampingRatio
+
+	Returns the spring's current damping ratio value.
+
+	@return number
+]=]
+function FractalitySpringClass.getDampingRatio<T>(self: FractalitySpring<T>)
 	return self.internal:getDampingRatio()
 end
 
-function FraktalitySpringClass.getFrequency<T>(self: FraktalitySpring<T>)
+--[=[
+	@within FractalitySpring
+	@method getFrequency
+
+	Returns the spring's current frequency value.
+
+	@return number
+]=]
+function FractalitySpringClass.getFrequency<T>(self: FractalitySpring<T>)
 	return self.internal:getFrequency()
 end
 
-function FraktalitySpringClass.getPosition<T>(self: FraktalitySpring<T>)
+--[=[
+	@within FractalitySpring
+	@method getPosition
+
+	Returns the spring's current position.
+
+	@return T
+]=]
+function FractalitySpringClass.getPosition<T>(self: FractalitySpring<T>)
 	return self.internal:getPosition()
 end
 
-function FraktalitySpringClass.getVelocity<T>(self: FraktalitySpring<T>)
+--[=[
+	@within FractalitySpring
+	@method getVelocity
+
+	Returns the spring's current velocity. The length of this array depends on the value type of the spring.
+
+	@return { number }
+]=]
+function FractalitySpringClass.getVelocity<T>(self: FractalitySpring<T>)
 	return self.internal:getVelocity()
 end
 
-function FraktalitySpringClass.getGoal<T>(self: FraktalitySpring<T>)
+--[=[
+	@within FractalitySpring
+	@method getGoal
+
+	Returns the spring's current goal.
+
+	@return T
+]=]
+function FractalitySpringClass.getGoal<T>(self: FractalitySpring<T>)
 	return self.internal:getGoal()
 end
 
-function FraktalitySpringClass.setDampingRatio<T>(self: FraktalitySpring<T>, dampingRatio: number)
+--[=[
+	@within FractalitySpring
+	@method setDampingRatio
+
+	Sets the spring's damping ratio.
+
+	@param dampingRatio number
+]=]
+function FractalitySpringClass.setDampingRatio<T>(self: FractalitySpring<T>, dampingRatio: number)
 	self.internal:setDampingRatio(dampingRatio)
 end
 
-function FraktalitySpringClass.setFrequency<T>(self: FraktalitySpring<T>, frequency: number)
+--[=[
+	@within FractalitySpring
+	@method setFrequency
+
+	Sets the spring's frequency.
+
+	@param frequency number
+]=]
+function FractalitySpringClass.setFrequency<T>(self: FractalitySpring<T>, frequency: number)
 	self.internal:setFrequency(frequency)
 end
 
-function FraktalitySpringClass.setPosition<T>(self: FraktalitySpring<T>, position: T)
+--[=[
+	@within FractalitySpring
+	@method setPosition
+
+	Sets the spring's position.
+
+	@param position T
+]=]
+function FractalitySpringClass.setPosition<T>(self: FractalitySpring<T>, position: T)
 	self.internal:setPosition(position)
 end
 
-function FraktalitySpringClass.setVelocity<T>(self: FraktalitySpring<T>, velocity: { number })
+--[=[
+	@within FractalitySpring
+	@method setFrequency
+
+	Sets the spring's velocity. The length of this array depends on the value type of the spring.
+
+	@param velocity { number }
+]=]
+function FractalitySpringClass.setVelocity<T>(self: FractalitySpring<T>, velocity: { number })
 	self.internal:setVelocity(velocity)
 end
 
-function FraktalitySpringClass.setGoal<T>(self: FraktalitySpring<T>, goal: T)
+--[=[
+	@within FractalitySpring
+	@method setGoal
+
+	Sets the spring's goal.
+
+	@param goal T
+]=]
+function FractalitySpringClass.setGoal<T>(self: FractalitySpring<T>, goal: T)
 	self.internal:setGoal(goal)
 end
 
-function FraktalitySpringClass.canSleep<T>(self: FraktalitySpring<T>)
+--[=[
+	@within FractalitySpring
+	@method canSleep
+
+	Provides whether or not the spring can be considered moving or not.
+
+	@return boolean -- if true then the spring is not moving.
+]=]
+function FractalitySpringClass.canSleep<T>(self: FractalitySpring<T>)
 	return self.internal:canSleep()
 end
 
-function FraktalitySpringClass.step<T>(self: FraktalitySpring<T>, dt: number)
+--[=[
+	@within FractalitySpring
+	@method step
+
+	Steps the spring forward and returns the newly calculated position.
+
+	@param dt number -- the delta-time between last step
+	@return T
+]=]
+function FractalitySpringClass.step<T>(self: FractalitySpring<T>, dt: number)
 	return self.internal:step(dt)
 end
 
 --
 
-return FraktalitySpringClass
+return FractalitySpringClass
