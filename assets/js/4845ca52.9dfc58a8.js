@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[142],{63891:s=>{s.exports=JSON.parse('{"sourceUrl":"https://github.com/EgoMoose/rbx-fractality-spring/blob/main","baseUrl":"/rbx-fractality-spring/","classOrder":[],"apiCategories":[]}')}}]);
