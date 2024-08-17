@@ -8,3 +8,14 @@ Get it here:
 
 * [Wally](https://wally.run/package/egomoose/fractality-spring)
 * [Releases](https://github.com/EgoMoose/rbx-fractality-spring/releases)
+
+## Example
+
+```luau
+local spring = FractalitySpring.new(0.1, 4, movingPart.CFrame, targetPart.CFrame)
+
+game:GetService("RunService").Heartbeat:Connect(function(dt)
+	spring:setGoal(targetPart.CFrame)
+	movingPart.CFrame = spring:step(dt)
+end)
+```

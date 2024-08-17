@@ -32,6 +32,9 @@ export type FractalitySpring<T> = typeof(setmetatable(
 
 	Creates a new spring.
 
+	Supports the following types:
+	boolean, number, NumberRange, UDim, UDim2, Vector2, Vector3, Color3, CFrame
+
 	@param dampingRation number
 	@param frequency number
 	@param position T
