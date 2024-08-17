@@ -3,6 +3,6 @@
 registry = "test"
 
 [[package]]
-name = "egomoose/rbx-frak-spring"
+name = "egomoose/fractality-spring"
 version = "0.1.0"
 dependencies = []
