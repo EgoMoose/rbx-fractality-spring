@@ -1,7 +1,7 @@
 [package]
 name = "egomoose/fractality-spring"
 description = "https://github.com/EgoMoose/rbx-fractality-spring"
-version = "0.1.0"
+version = "0.2.0"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 authors = ["Fractality", "EgoMoose"]

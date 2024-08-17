@@ -24,6 +24,8 @@ export type FractalitySpring<T> = typeof(setmetatable(
 	FractalitySpringClass
 ))
 
+export type Spring<T> = FractalitySpring<T>
+
 -- Constructors
 
 --[=[
